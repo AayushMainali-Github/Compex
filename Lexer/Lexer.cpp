@@ -26,7 +26,7 @@ Token Lexer::nextToken()
     Token tok(TokenType::ILLEGAL, "");
     switch (ch)
     {
-    // ARITHMETIC OPERATORS
+    // ARITHMETIC AND UNARY OPERATORS
     case '+':
         readChar();
         if (ch == '+')

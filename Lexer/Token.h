@@ -19,8 +19,10 @@ enum TokenType
     FLOAT,
     STRING,
 
-    // ARITHMETIC OPERATORS
+    // ASSIGNMENT OPERATORS
     EQUAL,
+
+    // ARITHMETIC OPERATORS
     PLUS,
     MINUS,
     MULTIPLY,
