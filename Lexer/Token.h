@@ -1,14 +1,6 @@
 #include <string>
 
-class Token
-{
-public:
-    TokenType type;
-    std::string literal;
-    Token(TokenType type, std::string literal);
-};
-
-enum TokenType
+enum class TokenType
 {
     ILLEGAL,
     ENOF,
@@ -56,4 +48,12 @@ enum TokenType
     THEN,
     END
 
+};
+
+class Token
+{
+public:
+    TokenType type;
+    std::string literal;
+    Token(TokenType type, std::string literal);
 };

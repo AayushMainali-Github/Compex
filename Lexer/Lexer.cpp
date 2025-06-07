@@ -1,8 +1,8 @@
 #include "Lexer.h"
-#include "Token.h"
 #include <string>
+#include <iostream>
 
-Lexer::Lexer(std::string input) : currentPos(0), readPos(0), input(input), ch(input[0]) {}
+Lexer::Lexer(std::string input) : currentPos(0), readPos(1), input(input), ch(input[0]) {}
 
 void Lexer::readChar()
 {
@@ -18,12 +18,13 @@ void Lexer::changePos(int pos)
 {
     currentPos = pos;
     ch = input[currentPos];
-    readPos = pos + 1;
+    readPos = currentPos + 1;
 }
 
 Token Lexer::nextToken()
 {
-    Token tok(TokenType::ILLEGAL, "");
+
+    Token tok(TokenType::ILLEGAL, "II");
     switch (ch)
     {
     // ARITHMETIC AND UNARY OPERATORS
@@ -40,6 +41,7 @@ Token Lexer::nextToken()
             tok.literal = "+";
             changePos(currentPos - 1);
         }
+        break;
     case '-':
         readChar();
         if (ch == '-')
@@ -53,15 +55,19 @@ Token Lexer::nextToken()
             tok.literal = "-";
             changePos(currentPos - 1);
         }
+        break;
     case '*':
         tok.type = TokenType::MULTIPLY;
         tok.literal = ch;
+        break;
     case '/':
         tok.type = TokenType::DIVIDE;
         tok.literal = ch;
+        break;
     case 0:
         tok.type = TokenType::ENOF;
-        tok.literal = "";
+        tok.literal = "EE";
+        break;
     }
     readChar();
     return tok;
