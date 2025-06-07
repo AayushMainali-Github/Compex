@@ -46,8 +46,8 @@ enum TokenType
 
 class Token
 {
-    int Type;
+    TokenType Type;
     std::string Literal;
 
-    Token(int Type, std::string Literal);
+    Token(TokenType Type, std::string Literal);
 };
