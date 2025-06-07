@@ -1,59 +1,63 @@
 #include <string>
 
-enum class TokenType
-{
-    ILLEGAL,
-    ENOF,
+enum class TokenType {
+  ILLEGAL,
+  ENOF,
 
-    // IDENTIFIERS + LITERALS
-    IDENTIFIER,
-    INT,
-    FLOAT,
-    STRING,
+  // IDENTIFIERS + LITERALS
+  IDENTIFIER,
+  INT,
+  FLOAT,
+  STRING,
 
-    // ASSIGNMENT OPERATORS
-    EQUAL,
+  // ASSIGNMENT OPERATORS
+  EQUAL,
 
-    // ARITHMETIC OPERATORS
-    PLUS,
-    MINUS,
-    MULTIPLY,
-    DIVIDE,
+  // ARITHMETIC OPERATORS
+  PLUS,
+  MINUS,
+  MULTIPLY,
+  DIVIDE,
+  MODULUS,
+  EXPONENTIATION,
 
-    // UNARY OPERATORS
-    INCREMENT,
-    DECREMENT,
+  // UNARY OPERATORS
+  INCREMENT,
+  DECREMENT,
 
-    // COMPARISON OPERATORS
-    EQUALS,
-    LESSTHAN,
-    MORETHAN,
-    LESSTHANEQUALS,
-    MORETHANEQUALS,
-    NOTEQUALS,
+  // COMPARISON OPERATORS
+  EQUALS,
+  LESSTHAN,
+  MORETHAN,
+  LESSTHANEQUALS,
+  MORETHANEQUALS,
+  NOTEQUALS,
 
-    // LOGICAL OPERATORS
-    AND,
-    OR,
-    NOT,
+  // LOGICAL OPERATORS
+  AND,
+  OR,
+  NOT,
 
-    // DELIMETERS
-    COMMA,
-    LPAREN,
-    RPAREN,
+  // DELIMETERS
+  COMMA,
+  SEMICOLON,
+  LPAREN,
+  RPAREN,
 
-    // KEYWORDS
-    LET,
-    IF,
-    THEN,
-    END
+  // KEYWORDS
+  LET,
+  IF,
+  ELSE,
+  WHILE,
+  THEN,
+  END,
+  CALL
 
 };
 
-class Token
-{
+class Token {
 public:
-    TokenType type;
-    std::string literal;
-    Token(TokenType type, std::string literal);
+  TokenType type;
+  std::string literal;
+  Token(TokenType type, std::string literal);
 };
