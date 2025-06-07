@@ -28,11 +28,31 @@ Token Lexer::nextToken()
     {
     // ARITHMETIC OPERATORS
     case '+':
-        tok.type = TokenType::PLUS;
-        tok.literal = ch;
+        readChar();
+        if (ch == '+')
+        {
+            tok.type = TokenType::INCREMENT;
+            tok.literal = "++";
+        }
+        else
+        {
+            tok.type = TokenType::PLUS;
+            tok.literal = "+";
+            changePos(currentPos - 1);
+        }
     case '-':
-        tok.type = TokenType::MINUS;
-        tok.literal = ch;
+        readChar();
+        if (ch == '-')
+        {
+            tok.type = TokenType::DECREMENT;
+            tok.literal = "--";
+        }
+        else
+        {
+            tok.type = TokenType::MINUS;
+            tok.literal = "-";
+            changePos(currentPos - 1);
+        }
     case '*':
         tok.type = TokenType::MULTIPLY;
         tok.literal = ch;
