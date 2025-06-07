@@ -26,6 +26,10 @@ enum TokenType
     MULTIPLY,
     DIVIDE,
 
+    // UNARY OPERATORS
+    INCREMENT,
+    DECREMENT,
+
     // COMPARISON OPERATORS
     EQUALS,
     LESSTHAN,
