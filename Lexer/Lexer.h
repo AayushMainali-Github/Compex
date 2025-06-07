@@ -7,9 +7,9 @@ class Lexer
     int pos;
     int readPos;
     char ch;
-    Lexer(std::string input);
 
 public:
+    Lexer(std::string input);
     void readChar();
     Token nextToken();
 };

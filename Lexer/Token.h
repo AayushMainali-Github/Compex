@@ -2,9 +2,9 @@
 
 class Token
 {
+public:
     TokenType type;
     std::string literal;
-
     Token(TokenType type, std::string literal);
 };
 
